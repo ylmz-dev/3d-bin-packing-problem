@@ -82,10 +82,10 @@ visualize.py dosyası kullanılarak 3 boyutlu görselleştirilmiş sonuçlara do
 
 ## TEST DENEMELERİ
 Denenen test case senaryolarının sonuçlarına ve görselleştirmelerine aşağıda linkteki Python Repository sekmesinden ulaşabilirsiniz.
-https://docs.google.com/spreadsheets/d/1GicB3rwzPJe_Hlm_xAzUpQnWtp2qObtKjfGarEcGwDI/edit?usp=sharing
+> https://docs.google.com/spreadsheets/d/1GicB3rwzPJe_Hlm_xAzUpQnWtp2qObtKjfGarEcGwDI/edit?usp=sharing
 
 ## REFERANSLAR
 
 * https://github.com/bom-d-van/binpacking
 * https://github.com/gedex/bp3d
-* [ MAKALE: Optimizing three-dimensional bin packing through simulation]
+* [MAKALE: Optimizing three-dimensional bin packing through simulation](makale.pdf)
