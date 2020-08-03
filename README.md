@@ -1,32 +1,17 @@
-3D Bin Packing
+BB Container Problem
 ====
 
-3D Bin Packing implementation based on [this paper](erick_dube_507-034.pdf). The code is based on [gedex](https://github.com/gedex/bp3d) implementation in Go.
+3D Bin Packing implementasyonu bu makale baz alınarak geliştirilmiştir. [Makale](makale.pdf). Referans kod: [gedex](https://github.com/gedex/bp3d).
 
-## Features
-1. Sorting Bins and Items:
-    ```[bigger_first=False/True]``` By default all the bins and items are sorted from the smallest to the biggest, also it can be vice versa, to make the packing in such ordering.
-2. Item Distribution:
-    - ```[distribute_items=True]``` From a list of bins and items, put the items in the bins that at least one item be in one bin that can be fitted. That is, distribute all the items in all the bins so that they can be contained.
-    - ```[distribute_items=False]``` From a list of bins and items, try to put all the items in each bin and in the end it show per bin all the items that was fitted and the items that was not.
-3. Number of decimals:
-    ```[number_of_decimals=X]``` Define the limits of decimals of the inputs and the outputs. By default is 3.
+## Açıklama
 
-## Install
-
-```
-pip install py3dbp
-```
-
-## Basic Explanation
-
-Bin and Items have the same creation params:
-```
+Bin ve item parametrelerinin tanımlanması:
+```py
 my_bin = Bin(name, width, height, depth, max_weight)
 my_item = Item(name, width, height, depth, weight)
 ```
-Packer have three main functions:
-```
+Packer 3 temel fonksiyona sahip:
+```py
 packer = Packer()           # PACKER DEFINITION
 
 packer.add_bin(my_bin)      # ADDING BINS TO PACKER
@@ -35,17 +20,19 @@ packer.add_item(my_item)    # ADDING ITEMS TO PACKER
 packer.pack()               # PACKING - by default (bigger_first=False, distribute_items=False, number_of_decimals=3)
 ```
 
-After packing:
-```
+Packing işlemi sonrasında:
+```py
 packer.bins                 # GET ALL BINS OF PACKER
 my_bin.items                # GET ALL FITTED ITEMS IN EACH BIN
 my_bin.unfitted_items       # GET ALL UNFITTED ITEMS IN EACH BIN
 ```
 
 
-## Usage
+## Kullanım
 
-```
+Packer oluşturulup istenilen sayıda bin ve istenilen binlere gerekli itemlar eklenebilir. .pack() fonksiyonu verilen bilgiler doğrusunda packing işlemini geçekleştirecektir.
+
+```py
 from py3dbp import Packer, Bin, Item
 
 packer = Packer()
@@ -85,21 +72,20 @@ for b in packer.bins:
     print("***************************************************")
 
 ```
+## GÖRSELLEŞTİRME
+visualize.py dosyası kullanılarak 3 boyutlu görselleştirilmiş sonuçlara doğrudan ulaşılabilir.
 
-## Versioning
-- **1.x**
-    - Two ways to distribute items (all items in all bins - all items in each bin).
-    - Get per bin the fitted and unfitted items.
-    - Set the limit of decimals of inputs and outputs.
-- **0.x**
-    - Try to put all items in the first bin that can fit at least one.
+### Örnek görselleştirmeler
+![Örnek Görselleştirme - 1](Screens/1_5.png)
+![Örnek Görselleştirme - 1](Screens/1_1.png)
 
-## Credit
+
+## TEST DENEMELERİ
+Denenen test case senaryolarının sonuçlarına ve görselleştirmelerine aşağıda linkteki Python Repository sekmesinden ulaşabilirsiniz.
+https://docs.google.com/spreadsheets/d/1GicB3rwzPJe_Hlm_xAzUpQnWtp2qObtKjfGarEcGwDI/edit?usp=sharing
+
+## REFERANSLAR
 
 * https://github.com/bom-d-van/binpacking
 * https://github.com/gedex/bp3d
-* [Optimizing three-dimensional bin packing through simulation](erick_dube_507-034.pdf)
-
-## License
-
-[MIT](./LICENSE)
+* [ MAKALE: Optimizing three-dimensional bin packing through simulation]
