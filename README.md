@@ -1,4 +1,4 @@
-BB Container Problem
+3D Bin Packing Problem
 ====
 
 3D Bin Packing implementasyonu bu makale baz alınarak geliştirilmiştir. [Makale](makale.pdf). Referans kod: [gedex](https://github.com/gedex/bp3d).
